@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content=" console de gastos mensuales" />
+	<meta name="Renata" content="" />
+	<title>Presupuestos Simulator</title>
+	<!-- Bootstrap-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+	<!-- Core theme CSS (includes Bootstrap)-->
+	<link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+		<div class="container">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="index.html">Inicio</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="consulta.html">Consulta</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="presupuestosimul.html">Presupuesto Simulator</a>
+			</li>
+			</ul>
+			
+		</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col mb-5">
+			<h1 class="display-4">Presupuesto Simulator</h1>
+			</div>
+		</div>
+		<div class="form-inline">
+			<div class="form-group py-1">
+				<p>Descripcion:</p>
+				<input type="text" class="form-control" id="desc" placeholder="Ej: Remodelacion del Baño - Azulejo">
+			</div>
+			<div class="form-group py-1">
+				<p>Cantidad:</p>
+				<input type="text" class="form-control" id="cant" placeholder="Ej: Cantidad de Azulejos">
+			</div>
+			<div class="form-group py-1">
+				<p>Valor $0.00 :</p>
+				<input type="text" class="form-control" id="valor" placeholder="Valor x unidad">
+			</div>
+			<span id="btnUpdate" style="display: none;">
+				<span id="newIDupdate"></span>
+				<br>
+				<button onclick="updateData();" class="btn btn-success">Guardar</button>
+				<button onclick="resetForm();" class="btn btn-info">Cancelar</button>
+			</span>
+			<br>
+			<div class="container text-center py-3">
+			<span id="btnAdd">
+				<button onclick="agregarData();" class="btn btn-success">Agregar Item</button>
+				<button onclick="resetForm();" class="btn btn-dark">Borrar los campos</button>
+				<button onclick="borrarLista();" class="btn btn-danger">Eliminar la lista</button>
+			</span>
+		</div>
+		</div>
+		<div id="errores" style="display: none;"></div>
+		<table id="listTable" class="table">
+		</table>
+	</div>
+	<nav class="navbar navbar-default navbar-fixed-bottom py-3">
+		<div class="container col-md-1">
+			<h4 class="text-center text-success">Total: <span id="valorTotal">$ 0,00</span></h4>
+	</div>
+	</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
